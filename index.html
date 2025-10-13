@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Uncle Property — Katalog Properti</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Katalog properti Uncle Property — kavling, tanah, dan villa. Hubungi marketing via WhatsApp.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">UP</div>
+        <div class="brand-text">
+          <h1>Uncle Property</h1>
+          <p class="tag">Temukan Investasi Properti Impian Anda</p>
+        </div>
+      </div>
+      <nav class="nav">
+       <!-- <a class="btn ghost" href="#catalog">Katalog</a> -->
+        <a class="btn primary" id="contact-hero" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20ingin%20info%20lebih%20lanjut" target="_blank" rel="noopener">Hubungi Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Investasi Properti — <span class="accent">Mudah dan Aman</span></h2>
+          <p class="lead">Katalog properti murah — kavling, tanah, dan villa yang dipilih khusus untuk investasi dan hunian.</p>
+         <!-- <div class="hero-ctas">
+            <a class="btn outline" href="#catalog">Lihat Katalog</a>
+            <a class="btn primary" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20tertarik%20dengan%20Uncle%20Property" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
+          </div> -->
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1505691723518-36a0b16f9b2d?auto=format&fit=crop&w=1200&q=80" alt="Preview properti Uncle Property">
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog container">
+      <h3 class="section-title">Katalog Properti</h3>
+      <div id="cards" class="cards-grid" aria-live="polite">
+        <!-- Cards will be injected here from properties.json -->
+      </div>
+    </section>
+
+    <section class="contacts container">
+      <h3 class="section-title">Kontak Marketing</h3>
+      <div class="contacts-grid">
+        <div class="contact-card">
+          <div class="avatar">R</div>
+          <div>
+            <div class="name">Rifky Rangga</div>
+            <a class="wa-link" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20ingin%20info%20properti" target="_blank" rel="noopener">+62 895-3652-82575</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="avatar">A</div>
+          <div>
+            <div class="name">Andi Pratama</div>
+            <a class="wa-link" href="https://wa.me/6281234567890?text=Halo%20Andi%2C%20saya%20ingin%20info%20properti" target="_blank" rel="noopener">+62 812-3456-7890</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Uncle Property. All rights reserved.</div>
+      <div class="socials">—</div>
+    </div>
+  </footer>
+
+  <script>
+  // Load JSON and render cards
+  async function loadProperties(){
+    try{
+      const res = await fetch('properties.json');
+      const props = await res.json();
+      const container = document.getElementById('cards');
+      container.innerHTML = '';
+      props.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <div class="card-media"><img src="\${p.image}" alt="\${p.title}"></div>
+          <div class="card-body">
+            <h4 class="card-title">\${p.title}</h4>
+            <p class="card-desc">\${p.short}</p>
+            <div class="card-price">\${p.price}</div>
+            <div class="card-actions">
+              <a class="btn small outline" href="https://wa.me/\${p.contact.replace(/[^0-9]/g,'')}?text=\${encodeURIComponent('Halo, saya tertarik dengan ' + p.title)}" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
+              <a class="btn small primary" href="https://wa.me/\${p.contact.replace(/[^0-9]/g,'')}?text=\${encodeURIComponent('Halo, saya tertarik dengan ' + p.title)}" target="_blank" rel="noopener">Chat Sekarang</a>
+            </div>
+            <div class="marketing">Marketing: \${p.marketing}</div>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+    }catch(err){
+      console.error(err);
+      document.getElementById('cards').innerHTML = '<p class="error">Gagal memuat data. Pastikan file <code>properties.json</code> tersedia.</p>';
+    }
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+  loadProperties();
+  </script>
+</body>
+</html>
