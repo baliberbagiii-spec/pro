@@ -1,34 +1,40 @@
 [
   {
+    "id": "kavling-yeh-gangga",
     "title": "Kavling Yeh Gangga, Tabanan",
     "short": "Dekat Pantai Yeh Gangga — cocok untuk investasi dan liburan.",
     "price": "Rp 530 Juta / 100m²",
     "image": "https://i.pinimg.com/1200x/a2/04/c8/a204c8105f5772a64702c9f81de6e973.jpg",
+
+    "gallery": [
+      "https://i.pinimg.com/1200x/a2/04/c8/a204c8105f5772a64702c9f81de6e973.jpg",
+      "https://picsum.photos/800/600?1",
+      "https://picsum.photos/800/600?2"
+    ],
+
     "contact": "6283840335231",
-    "marketing": "Rifky Rangga"
+    "marketing": "Rifky Rangga",
+    "location": "Yeh Gangga, Tabanan, Bali",
+    "certificate": "SHM",
+    "land_size": "100 m²"
   },
+
   {
+    "id": "kavling-muding-mekar",
     "title": "Kavling Muding Mekar, Kerobokan",
     "short": "Akses mudah, kawasan berkembang, ideal untuk perumahan.",
     "price": "Rp 900 Juta / are",
     "image": "https://i.pinimg.com/1200x/a2/04/c8/a204c8105f5772a64702c9f81de6e973.jpg",
+
+    "gallery": [
+      "https://i.pinimg.com/1200x/a2/04/c8/a204c8105f5772a64702c9f81de6e973.jpg",
+      "https://picsum.photos/800/600?3"
+    ],
+
     "contact": "6283840335231",
-    "marketing": "Rifky Rangga"
-  },
-  {
-    "title": "Tanah Los Pantai Lebih, Gianyar",
-    "short": "Sebelah Bypass Ida Bagus Mantra — potensi pariwisata tinggi.",
-    "price": "Rp 8 Juta / m²",
-    "image": "https://i.pinimg.com/1200x/a2/04/c8/a204c8105f5772a64702c9f81de6e973.jpg",
-   "contact": "6283840335231",
-    "marketing": "Rifky Rangga"
-  },
-  {
-    "title": "Villa View Sawah, Canggu",
-    "short": "Lingkungan tenang, akses strategis — cocok hunian premium.",
-    "price": "Rp 2,5 Miliar",
-    "image": "https://i.pinimg.com/1200x/a2/04/c8/a204c8105f5772a64702c9f81de6e973.jpg",
-    "contact": "6283840335231",
-    "marketing": "Rifky Rangga"
+    "marketing": "Rifky Rangga",
+    "location": "Kerobokan, Badung",
+    "certificate": "SHM",
+    "land_size": "1 are"
   }
 ]
