@@ -73,14 +73,12 @@ async function loadDetail() {
             <li><strong>Luas Tanah:</strong> ${p.land_size || '-'}</li>
             <li><strong>Sertifikat:</strong> ${p.certificate || '-'}</li>
             <li>
-                <strong>Maps:</strong>
-                  ${
-                    p.maps
-                    ? `<a href="${p.maps}" target="_blank" rel="noopener noreferrer" class="maps-link">
-                     Lihat Lokasi di Google Maps
-                       </a>`
-                    : '-'
-                    }
+              <strong>Maps:</strong>
+              ${
+                p.maps
+                  ? `<a href="${p.maps}" target="_blank" class="maps-link">${p.maps}</a>`
+                  : '-'
+              }
             </li>
           </ul>
           <br />
