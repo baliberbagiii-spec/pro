@@ -99,4 +99,12 @@ body{
     grid-template-columns: 1fr;
   }
 }
+.maps-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
 
+.maps-link:hover {
+  opacity: 0.85;
+}
