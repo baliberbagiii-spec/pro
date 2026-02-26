@@ -36,7 +36,7 @@
     "location": "Kerobokan, Badung",
     "certificate": "SHM",
     "land_size": "1 are"
-  }
+  },
   {
     "id": "kavling-muding-mekar",
     "title": "Kavling Muding Mekar, Kerobokan",
@@ -54,7 +54,7 @@
     "location": "Kerobokan, Badung",
     "certificate": "SHM",
     "land_size": "1 are"
-  }
+  },
   {
     "id": "kavling-muding-mekar",
     "title": "Kavling Muding Mekar, Kerobokan",
@@ -72,7 +72,7 @@
     "location": "Kerobokan, Badung",
     "certificate": "SHM",
     "land_size": "1 are"
-  }
+  },
   {
     "id": "kavling-muding-mekar",
     "title": "Kavling Muding Mekar, Kerobokan",
@@ -90,5 +90,6 @@
     "location": "Kerobokan, Badung",
     "certificate": "SHM",
     "land_size": "1 are"
-  }
+  },
+
 ]
