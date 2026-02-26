@@ -2,119 +2,137 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Uncle Property — Katalog Properti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NexPoint Agency — Katalog Properti</title>
+
+  <meta name="description" content="Katalog properti NexPoint Agency — kavling, tanah, dan villa.">
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Katalog properti NexPoint Agency — kavling, global, dan sewa. Hubungi marketing kami via WhatsApp.">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="logo">NP</div>
-        <div class="brand-text">
-          <h1>NexPoint Agency</h1>
-          <p class="tag">Temukan Investasi Properti Impian Anda</p>
-        </div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo">NP</div>
+      <div class="brand-text">
+        <h1>NexPoint Agency</h1>
+        <p class="tag">Temukan Investasi Properti Impian Anda</p>
       </div>
-     
     </div>
-  </header>
-  
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h2>Investasi Properti — <span class="accent">Mudah dan Aman</span></h2>
-          <p class="lead">Katalog properti NexPoint Agency — kavling, global, dan sewa yang dipilih khusus untuk investasi dan hunian.</p>
-         <!-- <div class="hero-ctas">
-            <a class="btn outline" href="#catalog">Lihat Katalog</a>
-            <a class="btn primary" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20tertarik%20dengan%20Uncle%20Property" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
-          </div> -->
-        </div>
-      </div>
-    </section>
+<!-- ================= MAIN ================= -->
+<main>
 
-    <section id="catalog" class="catalog container">
-      <h3 class="section-title">Katalog Properti</h3>
-      <div id="cards" class="cards-grid" aria-live="polite">
-        <!-- Cards will be injected here from properties.json -->
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h2>Investasi Properti — <span class="accent">Mudah dan Aman</span></h2>
+        <p class="lead">
+          Katalog properti pilihan untuk investasi dan hunian terbaik.
+        </p>
       </div>
-    </section>
-     <section class="contacts container">
-       <h2 class="section-title">Hubungi kami untuk informasi lengkapnya</h2>
-      <div class="contacts-grid">
-        <div class="contact-card">
-          <div class="avatar">R</div>
-          <div>
-            <div class="name">Rifky Rangga</div>
-            <a class="wa-link" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20ingin%20info%20properti%20yang%20tersedia" target="_blank" rel="noopener">+62 895-3652-82575</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="avatar">R</div>
-          <div>
-            <div class="name">Rifky Rangga</div>
-            <a class="wa-link" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20ingin%20info%20properti%20yang%20tersedia" target="_blank" rel="noopener">+62 895-3652-82575</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="avatar">R</div>
-          <div>
-            <div class="name">Rifky Rangga</div>
-            <a class="wa-link" href="https://wa.me/62895365282575?text=Halo%20Rifky%2C%20saya%20ingin%20info%20properti%20yang%20tersedia" target="_blank" rel="noopener">+62 895-3652-82575</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="avatar">A</div>
-          <div>
-            <div class="name">Andi Pratama</div>
-            <a class="wa-link" href="https://wa.me/6281234567890?text=Halo%20Andi%2C%20saya%20ingin%20info%20properti%20yang%20tersedia" target="_blank" rel="noopener">+62 812-3456-7890</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Uncle Property. All rights reserved.</div>
-      <div class="socials">—</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-  // Load JSON and render cards
-  async function loadProperties(){
-    try{
-      const res = await fetch('properties.json');
-      const props = await res.json();
-      const container = document.getElementById('cards');
-      container.innerHTML = '';
-      props.forEach(p => {
-        const el = document.createElement('article');
-        el.className = 'card';
-        el.innerHTML = `
-          <div class="card-media"><img src="${p.image}" alt="${p.title}"></div>
-          <div class="card-body">
-           <h4 class="card-title">${p.title} </h4>
-            <p class="card-desc">${p.short}</p>
-            <div class="card-price">${p.price}</div>
-            <div class="card-actions">
-              <a class="btn small outline" href="https://wa.me/6283840335231?text=${encodeURIComponent('Halo, saya tertarik dengan ' + p.title)}" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
-            </div>
+  <!-- CATALOG -->
+  <section id="catalog" class="catalog container">
+    <h3 class="section-title">Katalog Properti</h3>
+    <div id="cards" class="cards-grid"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contacts container">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <div class="contacts-grid">
+
+      <div class="contact-card">
+        <div class="avatar">R</div>
+        <div>
+          <div class="name">Rifky Rangga</div>
+          <a class="wa-link" href="https://wa.me/62895365282575" target="_blank">
+            +62 895-3652-82575
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="avatar">A</div>
+        <div>
+          <div class="name">Andi Pratama</div>
+          <a class="wa-link" href="https://wa.me/6281234567890" target="_blank">
+            +62 812-3456-7890
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> NexPoint Agency</div>
+  </div>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+const cardsContainer = document.getElementById('cards');
+
+async function loadProperties() {
+  try {
+    const res = await fetch('properties.json');
+    const properties = await res.json();
+
+    cardsContainer.innerHTML = properties.map(p => `
+      <article class="card">
+
+        <a href="detail.html?id=${p.id}" class="card-media">
+          <img src="${p.image}" alt="${p.title}">
+        </a>
+
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="detail.html?id=${p.id}" style="color:inherit;text-decoration:none">
+              ${p.title}
+            </a>
+          </h4>
+
+          <p class="card-desc">${p.short}</p>
+          <div class="card-price">${p.price}</div>
+
+          <div class="card-actions">
+            <a class="btn small outline"
+               href="https://wa.me/${p.contact}?text=${encodeURIComponent(
+                 'Halo, saya tertarik dengan ' + p.title
+               )}"
+               target="_blank"
+               onclick="event.stopPropagation()">
+              Hubungi via WhatsApp
+            </a>
           </div>
-        `;
-        container.appendChild(el);
-      });
-    }catch(err){
-      console.error(err);
-      document.getElementById('cards').innerHTML = '<p class="error">Gagal memuat data. Pastikan file <code>properties.json</code> tersedia.</p>';
-    }
+
+          <div class="marketing">Marketing: ${p.marketing}</div>
+        </div>
+
+      </article>
+    `).join('');
+
+  } catch (err) {
+    cardsContainer.innerHTML = '<p class="error">Gagal memuat data.</p>';
   }
-  document.getElementById('year').textContent = new Date().getFullYear();
-  loadProperties();
-  </script>
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+loadProperties();
+</script>
+  
 </body>
 </html>
