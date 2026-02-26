@@ -85,16 +85,16 @@
         const el = document.createElement('article');
         el.className = 'card';
         el.innerHTML = `
-          <div class="card-media"><img src="\${p.image}" alt="\${p.title}"></div>
+          <div class="card-media"><img src="${p.image}" alt="${p.title}"></div>
           <div class="card-body">
-            <h4 class="card-title">\${p.title}</h4>
-            <p class="card-desc">\${p.short}</p>
-            <div class="card-price">\${p.price}</div>
+            <h4 class="card-title">${p.title}</h4>
+            <p class="card-desc">${p.short}</p>
+            <div class="card-price">${p.price}</div>
             <div class="card-actions">
               <a class="btn small outline" href="https://wa.me/6283840335231?text=${encodeURIComponent('Halo, saya tertarik dengan ' + p.title)}" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
               <a class="btn small primary" href="https://wa.me/6283840335231?text=${encodeURIComponent('Halo, saya tertarik dengan ' + p.title)}" target="_blank" rel="noopener">Chat Sekarang</a>
             </div>
-            <div class="marketing">Marketing: \${p.marketing}</div>
+            <div class="marketing">Marketing: ${p.marketing}</div>
           </div>
         `;
         container.appendChild(el);
