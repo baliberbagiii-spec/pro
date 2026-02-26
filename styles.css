@@ -35,7 +35,7 @@ body{
 .section-title{font-size:22px;margin:0 0 12px 0}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .card{background:rgba(255,255,255,0.02);border:1px solid rgba(212,175,55,0.08);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
-.card-media img{width:100%px;height:550px;object-fit:50%50%;display:block;position:center}
+.card-media img{width:100%px;height:550px;object-fit:50% 50%;display:block}
 .card-body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card-title{margin:0;font-size:16px}
 .card-desc{color:var(--muted);font-size:13px;margin:0}
