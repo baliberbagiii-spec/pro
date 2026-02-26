@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail Properti</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="btn outline small">← Kembali</a>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="container" style="padding-top:32px">
+  <div id="detail"></div>
+</main>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+async function loadDetail() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  if (!id) {
+    document.getElementById('detail').innerHTML =
+      '<p class="error">Properti tidak ditemukan.</p>';
+    return;
+  }
+
+  try {
+    const res = await fetch('properties.json');
+    const properties = await res.json();
+    const p = properties.find(item => item.id === id);
+
+    if (!p) {
+      document.getElementById('detail').innerHTML =
+        '<p class="error">Properti tidak ditemukan.</p>';
+      return;
+    }
+
+    document.title = p.title + ' — NexPoint Agency';
+
+    document.getElementById('detail').innerHTML = `
+      <div class="detail-grid">
+
+        <!-- GALLERY -->
+        <div class="detail-image">
+          <img id="mainImage" src="${p.gallery[0]}" alt="${p.title}">
+          <div class="thumbs" id="thumbnails"></div>
+        </div>
+
+        <!-- INFO -->
+        <div class="detail-info">
+          <h1>${p.title}</h1>
+          <p class="card-price">${p.price}</p>
+          <p class="card-desc">${p.short}</p>
+
+          <ul class="detail-spec">
+            <li><strong>Lokasi:</strong> ${p.location || '-'}</li>
+            <li><strong>Luas Tanah:</strong> ${p.land_size || '-'}</li>
+            <li><strong>Sertifikat:</strong> ${p.certificate || '-'}</li>
+            <li><strong>Marketing:</strong> ${p.marketing}</li>
+          </ul>
+
+          <div class="card-actions" style="margin-top:20px">
+            <a class="btn primary"
+               href="https://wa.me/${p.contact}?text=${encodeURIComponent(
+                 'Halo, saya tertarik dengan ' + p.title
+               )}"
+               target="_blank">
+              Hubungi via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    `;
+
+    // ===== GALLERY LOGIC =====
+    const mainImage = document.getElementById('mainImage');
+    const thumbs = document.getElementById('thumbnails');
+
+    p.gallery.forEach((img, index) => {
+      const thumb = document.createElement('img');
+      thumb.src = img;
+      if (index === 0) thumb.classList.add('active');
+
+      thumb.onclick = () => {
+        mainImage.src = img;
+        document
+          .querySelectorAll('.thumbs img')
+          .forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      };
+
+      thumbs.appendChild(thumb);
+    });
+
+  } catch (err) {
+    document.getElementById('detail').innerHTML =
+      '<p class="error">Gagal memuat data properti.</p>';
+  }
+}
+
+loadDetail();
+</script>
+
+</body>
+</html>
